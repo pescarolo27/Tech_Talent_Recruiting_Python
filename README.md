@@ -10,3 +10,5 @@ Generate a new DataFrame named `candidates_df` containing the following columns:
 - `education`: Highest educational degree such as PhD, Master, or Bachelor.
 
 Keep only records that are complete and do not contain null or empty string values across these columns.
+
+This project was done in October, 2025.
