@@ -20,14 +20,14 @@ Fortunately, this brief evaluation of the 1,352 candidate records did not find a
 
 In order to obtain the desired information, the provided dataset had to be evaluated to learn how to do so. Retrieving the candidate ID was simple given that it was present in the original dataset. When it came to finding candidates' most recent job title, relevant technical skills, & the highest degree they obtained, the resume data had to be parsed fairly liberally.
 
-##### Investigating the Resumes
+#### Investigating the Resumes
 The resume data was investigated extensively to determine how to retrieve the desired information; however, given that there were 1,352 resumes, analyzing them all was unreasonable. As such, a few dozen random resumes were sampled & evaluated for commonalities & differences that might make obtaining the desired information easier. Ultimately, this examination revealed that there is an overall general format to this variable; however, parsing it & easily extracting the desired data would not be simple.  
 Generally, a resume begins with a fully capitalized job title, some of which are vague (e.g. "SALES"), followed by an indent. Furthermore, some resumes contained unusual characters within these fully capitalized words/word sequences such as "\n" (indicating a new line). This information was taken to refer to a candidate's most recent job title.
 
 Following this first detail, there are a plethora of other inconsistencies that prevent any single preprocessing technique from being applied such as different section headers, different separators, repeated sections, & more.  
 Ultimately, the objectives in this project defined describe specific variables including pieces of information to look for within the resumes. Given that the two remaining variables look for particular details in a resume, regular expressions ("regex" patterns) were utilized to look for & extract such patterns.
 
-##### Compiling the Desired Information
+#### Compiling the Desired Information
 To apply regular expressions, functions from the `re` module were used. As mentioned previously, the candidate ID was obtained straight from the original dataset. The most recent job title was also established to be the fully capitalized text at the beginning of each resume. As such, the `re.search()` function was used to search for such text; the specific pattern can be found in **Analysis I**.
 
 For the technical skills, `re.findall()` was used to look for mentions of Python, Excel, R &/or SQL in a resume regardless of capitalization. If other technical skills become relevant or requisites for certain tech jobs, they could be added to this pattern.
